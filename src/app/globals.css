@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,700&family=JetBrains+Mono:wght@300;400;500&display=swap');
+
+@import "tailwindcss";
+@import "tw-animate-css";
+
+:root {
+  /* Brutalist Signal Palette */
+  --paper: #E8E4DD;
+  --signal-red: #E63B2E;
+  --off-white: #F5F3EE;
+  --brutal-black: #111111;
+  
+  --radius: 0rem;
+  --background: #F5F3EE;
+  --foreground: #111111;
+  --card: #FFFFFF;
+  --card-foreground: #111111;
+  --popover: #FFFFFF;
+  --popover-foreground: #111111;
+  --primary: #111111;
+  --primary-foreground: #F5F3EE;
+  --secondary: #E8E4DD;
+  --secondary-foreground: #111111;
+  --muted: #E8E4DD;
+  --muted-foreground: #6B6B6B;
+  --accent: #E63B2E;
+  --accent-foreground: #FFFFFF;
+  --destructive: #E63B2E;
+  --border: rgba(17, 17, 17, 0.2);
+  --input: rgba(17, 17, 17, 0.15);
+  --ring: #E63B2E;
+  
+  --font-sans: 'Space Grotesk', system-ui, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  border: 2px solid rgba(17, 17, 17, 0.2);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  letter-spacing: -0.02em;
+}
+
+/* Custom scrollbar - brutal style */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E63B2E;
+  border-radius: 0;
+}
+
+/* Magnetic button effect */
+.btn-magnetic {
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.btn-magnetic:hover {
+  transform: scale(1.03);
+}
+
+/* Link lift effect */
+.link-lift {
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.link-lift:hover {
+  transform: translateY(-1px);
+}
+
+/* Animation keyframes */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes signal-pulse {
+  0%, 100% { 
+    opacity: 1; 
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 0.5; 
+    transform: scale(0.98);
+  }
+}
+
+.animate-pulse-dot {
+  animation: pulse-dot 1.5s ease-in-out infinite;
+}
+
+.cursor-blink {
+  animation: cursor-blink 1s step-end infinite;
+}
+
+.animate-signal-pulse {
+  animation: signal-pulse 2s ease-in-out infinite;
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 8px 8px 0 rgba(230, 59, 46, 0.2);
+}
